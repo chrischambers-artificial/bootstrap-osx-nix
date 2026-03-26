@@ -33,6 +33,8 @@
       configuration =
         { pkgs, ... }:
         {
+          nixpkgs.config.allowUnfree = true;
+
           # Use touch ID when running darwin-rebuild command above:
           security.pam.services.sudo_local.touchIdAuth = true;
 
@@ -69,10 +71,14 @@
 
             fastfetch # neofetch replacement
 
+            automake
+            emacsPackages.cask # required for building pdf-tools
             emacsPackages.jinx # spell-checking
             enchant # spell-checking
             hunspell
             hunspellDicts.en_GB-large
+            poppler
+            # libpng # required for building pdf-tools
             watchexec
 
             btop
@@ -127,6 +133,9 @@
             yamllint
             zoxide
             zsh
+
+            raycast # unfree
+            # alt-tab-macos
           ];
 
           # Creates symlink at /run/current-system/etc/fzf-git:
@@ -149,7 +158,7 @@
               # "FelixKratz/formulae"
             ];
             brews = [
-              "bash-language-server"
+              "bash-language-server" # not tested this with nix here
               {
                 name = "d12frosted/emacs-plus/emacs-plus@30";
                 args = [
@@ -161,6 +170,8 @@
             casks = [
               "disk-inventory-x"
               "ghostty"
+              "alt-tab"
+              "font-sauce-code-pro-nerd-font" # not tested this with nix here
               # "libreoffice"
             ];
           };
