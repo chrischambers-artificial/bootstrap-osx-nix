@@ -71,13 +71,14 @@
 
             fastfetch # neofetch replacement
 
-            automake
+            automake # pdf-tools
+            cmake # vterm
             emacsPackages.cask # required for building pdf-tools
             emacsPackages.jinx # spell-checking
             enchant # spell-checking
-            hunspell
-            hunspellDicts.en_GB-large
-            poppler
+            hunspell # spell-checking
+            hunspellDicts.en_GB-large # spell-checking
+            poppler # pdf-tools
             # libpng # required for building pdf-tools
             watchexec
 
@@ -134,8 +135,35 @@
             zoxide
             zsh
 
+            tree
+            tealdeer
+            keycastr
+            ffmpeg # mov -> gif
+
             raycast # unfree
             # alt-tab-macos
+            firefox-devedition
+            _1password-cli
+            carapace
+            # karabiner-elements
+            expect
+
+            # ------------------------------------------------------------
+            # Note: Homebrew and npm -g / npm installation instead:
+            # https://stackoverflow.com/questions/78862090/could-not-find-chromium-rev-1108766-this-can-occur-if-either
+            # ------------------------------------------------------------
+            # mermaid-cli   # attempt install via npm
+
+            # python313Packages.shtab
+            insomnia
+
+            # fde monorepo:
+            # docker
+            # aws-sam-cli
+            # awscli
+            terraform
+
+            zoom-us
           ];
 
           # Creates symlink at /run/current-system/etc/fzf-git:
@@ -159,6 +187,7 @@
             ];
             brews = [
               "bash-language-server" # not tested this with nix here
+              # "mermaid-cli"
               {
                 name = "d12frosted/emacs-plus/emacs-plus@30";
                 args = [
@@ -172,11 +201,17 @@
               "ghostty"
               "alt-tab"
               "font-sauce-code-pro-nerd-font" # not tested this with nix here
+              "amethyst"
+              "karabiner-elements"
+              "beekeeper-studio"
+              "postico"
+              # "mactex"
               # "libreoffice"
+              "docker-desktop"
             ];
           };
           # https://github.com/LnL7/nix-darwin/issues/1041
-          # services.karabiner-elements.enable = true;
+          # services.karabiner-elements.enable = true;
         };
       homeconfig =
         { pkgs, ... }:
