@@ -157,13 +157,19 @@
             # python313Packages.shtab
             insomnia
 
+            # ------------------------------------------------------------
             # fde monorepo:
+            # ------------------------------------------------------------
             # docker
             # aws-sam-cli
             # awscli
             terraform
+            # ------------------------------------------------------------
 
             zoom-us
+
+            hurl
+            nushell
           ];
 
           # Creates symlink at /run/current-system/etc/fzf-git:
