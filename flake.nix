@@ -238,7 +238,7 @@
           # Let home-manager install and manage itself:
           programs.home-manager.enable = true;
           home.packages = with pkgs; [
-            nixfmt-rfc-style
+            nixfmt
             nix-direnv
           ];
 
